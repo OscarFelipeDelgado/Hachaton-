@@ -42,16 +42,16 @@ img #pasto{
 #player img{
     position: absolute;
     z-index: 6;
-    top: 280px;
-    left: 380px;
+    top: 500px;
+    left: 285px;
     width: 3vw;
 }
 
 #computer img{
     position: absolute;
     z-index: 1;
-    top: 280px;
-    left: 20px;
+    top: 500px;
+    left: 80px;
     width: 6vw;
     transform: rotate(90deg);
 }
@@ -63,6 +63,7 @@ img #pasto{
     z-index: 1;
     top: 50px;
     width: 80vw;
+    height: 2vw;
 }
 .obstacle {
     position: absolute;
@@ -73,6 +74,7 @@ img #pasto{
 .obstacle img {
     width: 3vw;
     height: 7vw;
+    transform: rotate(180deg);
 }
 #pause {
     grid-area: pause;

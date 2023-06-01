@@ -4,37 +4,37 @@ var player = document.getElementById("carroRojo");
         var goal = document.getElementById("goal");
         var obstacles = [];
 
-        var playerInitialTop = 280;
-        var playerInitialLeft = 380;
-        var computerInitialTop = 280;
-        var computerInitialLeft = 20;
+        var playerInitialTop = 500;
+        var playerInitialLeft = 285;
+        var computerInitialTop = 500;
+        var computerInitialLeft = 80;
         var isPaused = false;
 
         function moveUp(element) {
             var topPosition = parseInt(window.getComputedStyle(element).getPropertyValue("top"));
             if (topPosition > 0) {
-                element.style.top = (topPosition - 10) + "px";
+                element.style.top = (topPosition - 2) + "px";
             }
         }
 
         function moveDown(element) {
             var topPosition = parseInt(window.getComputedStyle(element).getPropertyValue("top"));
             if (topPosition < 560) {
-                element.style.top = (topPosition + 10) + "px";
+                element.style.top = (topPosition + 2) + "px";
             }
         }
 
         function moveLeft(element) {
             var leftPosition = parseInt(window.getComputedStyle(element).getPropertyValue("left"));
             if (leftPosition > 0) {
-                element.style.left = (leftPosition - 10) + "px";
+                element.style.left = (leftPosition - 5) + "px";
             }
         }
 
         function moveRight(element) {
             var leftPosition = parseInt(window.getComputedStyle(element).getPropertyValue("left"));
             if (leftPosition < 760) {
-                element.style.left = (leftPosition + 10) + "px";
+                element.style.left = (leftPosition + 5) + "px";
             }
         }
 
@@ -122,23 +122,26 @@ var player = document.getElementById("carroRojo");
         }
 
         setInterval(moveObstacles, 30);
-        setInterval(createObstacle, 1500);
-        setInterval(moveComputer, 500);
+        setInterval(createObstacle, 250);
+        setInterval(moveComputer, 50);
 
         function moveComputer() {
             if (!isPaused) {
-                var randomDirection = Math.floor(Math.random() * 4);
+                var randomDirection = Math.floor(Math.random() * 3);
                 switch (randomDirection) {
                     case 0:
                         moveUp(computer);
+                        moveUp(computer);
+                        moveUp(computer);
                         break;
                     case 1:
-                        moveDown(computer);
-                        break;
-                    case 2:
+                        moveLeft(computer);
+                        moveLeft(computer);
                         moveLeft(computer);
                         break;
-                    case 3:
+                    case 2:
+                        moveRight(computer);
+                        moveRight(computer);
                         moveRight(computer);
                         break;
                 }
